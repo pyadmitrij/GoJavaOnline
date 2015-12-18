@@ -1,6 +1,6 @@
 package Flower;
 
-public enum Colors {
+public enum Color {
 
 	pinc,
 	red,

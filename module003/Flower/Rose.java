@@ -4,7 +4,7 @@ public class Rose extends Flower {
 	
 	private String name = "Rose";
 
-	public Rose(Colors color) {
+	public Rose(Color color) {
 		super(color);
 	}
 	

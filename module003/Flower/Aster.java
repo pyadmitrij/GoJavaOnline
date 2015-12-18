@@ -9,7 +9,7 @@ public class Aster extends Flower {
 	}
 
 
-	public Aster(Colors color) {
+	public Aster(Color color) {
 		super(color);
 	}
 

@@ -8,7 +8,7 @@ public class Chamomile extends Flower {
 		return name;
 	}
 
-	public Chamomile(Colors color) {
+	public Chamomile(Color color) {
 		super(color);
 	}
 

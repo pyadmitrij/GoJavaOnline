@@ -8,7 +8,7 @@ public class Tulip extends Flower {
 		return name;
 	}
 
-	public Tulip(Colors color) {
+	public Tulip(Color color) {
 		super(color);
 	}
 

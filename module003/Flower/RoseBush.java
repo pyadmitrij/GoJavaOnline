@@ -9,7 +9,7 @@ public class RoseBush extends Rose {
 	
 	private List<Rose> rose = new ArrayList<>();
 	
-	public RoseBush(Colors color, int n) {
+	public RoseBush(Color color, int n) {
 		super(color);
 		for (int i = 0; i < n ; i++){
 			Rose r = new Rose(color);

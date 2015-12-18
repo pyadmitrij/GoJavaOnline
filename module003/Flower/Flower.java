@@ -2,9 +2,9 @@ package Flower;
 
 public abstract class Flower {
 	private String name = "Flover";
-	private Colors color;
+	private Color color;
 	
-	public Flower(Colors color){
+	public Flower(Color color){
 		this.color = color;
 	}
 
@@ -12,7 +12,7 @@ public abstract class Flower {
 		return name;
 	}
 
-	public Colors getColor() {
+	public Color getColor() {
 		return color;
 	}
 	
