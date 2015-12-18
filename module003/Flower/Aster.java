@@ -14,7 +14,7 @@ public class Aster extends Flower {
 	}
 
 	@Override
-	protected void printInfo() {
+	public void printInfo() {
 		System.out.println(getName() + ", color " + getColor());
 	}
 

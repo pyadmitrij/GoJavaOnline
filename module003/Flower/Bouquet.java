@@ -1,17 +1,18 @@
 package flower;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Bouquet {
 	
-	private ArrayList<Flower> flower = new ArrayList<>();
+	private List<Flower> flower = new ArrayList<>();
 	
 	public Bouquet(Flower... flowers){
 		for(Flower f : flowers)
 			this.flower.add(f);
 	}
 
-	public ArrayList<Flower> getFlower() {
+	public List<Flower> getFlower() {
 		return flower;
 	}
 
