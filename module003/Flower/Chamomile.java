@@ -1,4 +1,4 @@
-package flower;
+package Flower;
 
 public class Chamomile extends Flower {
 	
@@ -8,7 +8,7 @@ public class Chamomile extends Flower {
 		return name;
 	}
 
-	public Chamomile(String color) {
+	public Chamomile(Colors color) {
 		super(color);
 	}
 

@@ -1,4 +1,4 @@
-package flower;
+package Flower;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ public class RoseBush extends Rose {
 	
 	private List<Rose> rose = new ArrayList<>();
 	
-	public RoseBush(String color, int n) {
+	public RoseBush(Colors color, int n) {
 		super(color);
 		for (int i = 0; i < n ; i++){
 			Rose r = new Rose(color);
@@ -26,6 +26,6 @@ public class RoseBush extends Rose {
 	}
 	
 	public void printInfo() {
-		System.out.println(getName() + ", color " + getColor() + " flores " + getRose().size());
+		System.out.println(getName() + ", color " + getColor() + ", flores " + getRose().size());
 	}
 }

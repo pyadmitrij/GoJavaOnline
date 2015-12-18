@@ -1,10 +1,10 @@
-package flower;
+package Flower;
 
 public abstract class Flower {
 	private String name = "Flover";
-	private String color;
+	private Colors color;
 	
-	public Flower(String color){
+	public Flower(Colors color){
 		this.color = color;
 	}
 
@@ -12,7 +12,7 @@ public abstract class Flower {
 		return name;
 	}
 
-	public String getColor() {
+	public Colors getColor() {
 		return color;
 	}
 	
