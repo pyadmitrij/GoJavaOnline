@@ -1,16 +1,20 @@
-package Flower;
+package flower;
 
 public class Chamomile extends Flower {
+	
+	private String name = "Chamomile";
 
-	public Chamomile(String name, String color) {
-		super(name, color);
+	public String getName() {
+		return name;
+	}
+
+	public Chamomile(String color) {
+		super(color);
 	}
 
 	@Override
 	protected void printInfo() {
-		System.out.println(getName() + ", color " + getColor());
-		
+		System.out.println(getName() + ", color " + getColor());	
 	}
-
 	
 }

@@ -1,20 +1,22 @@
 package flower;
 
-public class Rose extends Flower {
+public class Aster extends Flower {
 	
-	private String name = "Rose";
-
-	public Rose(String color) {
-		super(color);
-	}
+	private String name = "Aster";
 	
 	public String getName() {
 		return name;
+	}
+
+
+	public Aster(String color) {
+		super(color);
 	}
 
 	@Override
 	protected void printInfo() {
 		System.out.println(getName() + ", color " + getColor());
 	}
-	
+
+
 }
