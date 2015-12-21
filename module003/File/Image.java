@@ -1,15 +1,9 @@
 package file;
 
 public class Image extends File {
-	
-	private String name = "Image";
-	
-	public String getName() {
-		return name;
-	}
-	
-	public Image (int size) {
-		super(size);
+		
+	public Image (String name, int size) {
+		super(name, size);
 	}
 
 	@Override

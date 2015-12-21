@@ -2,14 +2,8 @@ package flower;
 
 public class Chamomile extends Flower {
 	
-	private String name = "Chamomile";
-
-	public String getName() {
-		return name;
-	}
-
-	public Chamomile(String color) {
-		super(color);
+	public Chamomile(String name, Color color) {
+		super(name, color);
 	}
 
 	@Override

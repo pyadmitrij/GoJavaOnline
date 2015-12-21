@@ -2,11 +2,12 @@ package music;
 
 public abstract class MusicInstr {
 	
-	private String name = "MusicalInstrument";
+	private String name;
 	private int price;
 	
-	public MusicInstr(int price) {
+	public MusicInstr(String name, int price) {
 		this.price = price;
+		this.name = name;
 	}
 
 	public String getName() {

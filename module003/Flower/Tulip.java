@@ -2,14 +2,8 @@ package flower;
 
 public class Tulip extends Flower {
 	
-	private String name = "Tulip";
-	
-	public String getName() {
-		return name;
-	}
-
-	public Tulip(String color) {
-		super(color);
+	public Tulip(String name, Color color) {
+		super(name, color);
 	}
 
 	@Override

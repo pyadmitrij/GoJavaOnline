@@ -4,21 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RoseBush extends Rose {
-
-	private String name = "RoseBush";
 	
 	private List<Rose> rose = new ArrayList<>();
 	
-	public RoseBush(String color, int n) {
-		super(color);
-		for (int i = 0; i < n ; i++){
-			Rose r = new Rose(color);
+	public RoseBush(String name, Color color, Rose... roses) {
+		super(name, color);
+		for(Rose r : roses){
 			this.rose.add(r);		
 		}		
-	}
-
-	public String getName() {
-		return name;
 	}
 
 	public List<Rose> getRose() {

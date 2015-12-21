@@ -2,10 +2,11 @@ package file;
 
 public abstract class File {
 	
-	private String name = "File";
+	private String name;
 	private int size;
 	
-	public File(int size) {
+	public File(String name, int size) {
+		this.name = name;
 		this.size = size;
 	}
 

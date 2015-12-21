@@ -1,16 +1,9 @@
 package flower;
 
 public class Aster extends Flower {
-	
-	private String name = "Aster";
-	
-	public String getName() {
-		return name;
-	}
 
-
-	public Aster(String color) {
-		super(color);
+	public Aster(String name, Color color) {
+		super(name, color);
 	}
 
 	@Override

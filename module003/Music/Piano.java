@@ -2,14 +2,8 @@ package music;
 
 public class Piano extends MusicInstr {
 	
-	private String name = "Piano";
-
-	public Piano(int price) {
-		super(price);
-	}
-	
-	public String getName() {
-		return name;
+	public Piano(String name, int price) {
+		super(name, price);
 	}
 
 	@Override

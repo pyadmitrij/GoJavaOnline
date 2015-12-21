@@ -2,14 +2,8 @@ package file;
 
 public class Text extends File {
 	
-	private String name = "Text";
-
-	public String getName() {
-		return name;
-	}
-
-	public Text(int size) {
-		super(size);
+	public Text(String name, int size) {
+		super(name, size);
 	}
 
 	@Override

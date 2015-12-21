@@ -2,14 +2,8 @@ package file;
 
 public class Audio extends File {
 	
-	private String name = "Audio";
-	
-	public String getName() {
-		return name;
-	}
-	
-	public Audio(int size) {
-		super(size);
+	public Audio(String name, int size) {
+		super(name, size);
 	}
 
 	@Override
