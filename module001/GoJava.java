@@ -1,4 +1,4 @@
-package GoJava;
+package gojava;
 
 public class GoJava {
     public static void main(String[] args){

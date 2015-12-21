@@ -1,4 +1,4 @@
-package Figure;
+package figure;
 
 public class Rectangle extends Figure {
 	

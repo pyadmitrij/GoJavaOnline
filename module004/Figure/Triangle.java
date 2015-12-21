@@ -1,4 +1,4 @@
-package Figure;
+package figure;
 
 public class Triangle extends Figure {
 	
