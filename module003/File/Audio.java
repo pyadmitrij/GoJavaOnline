@@ -1,4 +1,4 @@
-package File;
+package file;
 
 public class Audio extends File {
 	

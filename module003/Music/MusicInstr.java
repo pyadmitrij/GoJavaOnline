@@ -1,4 +1,4 @@
-package Music;
+package music;
 
 public abstract class MusicInstr {
 	

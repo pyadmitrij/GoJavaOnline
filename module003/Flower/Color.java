@@ -1,4 +1,4 @@
-package Flower;
+package flower;
 
 public enum Color {
 

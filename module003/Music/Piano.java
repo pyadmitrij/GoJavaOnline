@@ -1,4 +1,4 @@
-package Music;
+package music;
 
 public class Piano extends MusicInstr {
 	

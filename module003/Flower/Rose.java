@@ -1,10 +1,10 @@
-package Flower;
+package flower;
 
 public class Rose extends Flower {
 	
 	private String name = "Rose";
 
-	public Rose(Color color) {
+	public Rose(String color) {
 		super(color);
 	}
 	
