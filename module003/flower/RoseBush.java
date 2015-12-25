@@ -9,9 +9,8 @@ public class RoseBush extends Rose {
 	
 	public RoseBush(String name, Color color, Rose... roses) {
 		super(name, color);
-		for(Rose r : roses){
-			this.rose.add(r);		
-		}		
+		for(Rose r : roses)
+			this.rose.add(r);				
 	}
 
 	public List<Rose> getRose() {
