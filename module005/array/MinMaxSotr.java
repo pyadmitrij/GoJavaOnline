@@ -2,7 +2,7 @@ package array;
 
 public class MinMaxSotr {
 
-	public static int findMin(int[] array) {
+	public static int findMin(int [] array) {
 		if(array.length == 0) {
 			System.out.println("The array is empty!!!");
 			return 0;
@@ -15,7 +15,7 @@ public class MinMaxSotr {
 	   }
 	}
 	
-	public static int findMax(int[] array) {
+	public static int findMax(int [] array) {
 		if(array.length != 0) {
 			int max = array[0];
 			for(int i = 0; i < array.length; i++)
@@ -28,7 +28,7 @@ public class MinMaxSotr {
 		}
 	}
 	
-	public static void sortSelect(int[] array) {
+	public static void sortSelect(int [] array) {
 		for (int i=0; i < array.length-1; i++) {
 			int min = i;
 			int temp;
@@ -41,7 +41,7 @@ public class MinMaxSotr {
 		}
 	}
 	
-	public static void printArray(int[] array) {
+	public static void printArray(int [] array) {
         for(int i=0; i<array.length; i++)
             System.out.println("array["+ i + "] = " + array[i]);
         System.out.println();
