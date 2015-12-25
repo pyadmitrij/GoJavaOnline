@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RoseBush extends Rose {
-	
 	private List<Rose> rose = new ArrayList<>();
 	
 	public RoseBush(String name, Color color, Rose... roses) {
