@@ -16,7 +16,6 @@ public class MainFlover {
 	 		 	
 	 	System.out.println("Bouquet2: ");
 	 	for(Flower f : bouquet2.getFlower())
-	 		f.printInfo();
-	 	
+	 		f.printInfo();	
 	}
 }

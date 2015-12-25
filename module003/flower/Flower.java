@@ -1,6 +1,7 @@
 package flower;
 
 public abstract class Flower {
+
 	private String name;
 	private Color color;
 	

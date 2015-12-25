@@ -9,6 +9,5 @@ public class Rose extends Flower {
 	@Override
 	public void printInfo() {
 		System.out.println(getName() + ", color " + getColor());
-	}
-	
+	}	
 }

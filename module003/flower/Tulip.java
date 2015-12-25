@@ -10,5 +10,4 @@ public class Tulip extends Flower {
 	public void printInfo() {
 		System.out.println(getName() + ", color " + getColor());		
 	}
-
 }
