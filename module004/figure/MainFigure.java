@@ -12,5 +12,4 @@ public class MainFigure {
 		circle.printInfo();
 		rectangle.printInfo();
 	}
-
 }

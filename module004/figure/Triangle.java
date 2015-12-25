@@ -27,6 +27,5 @@ public class Triangle extends Figure {
 	public void printInfo() {
 		System.out.println("The area of a triangle : " + area());				
 	}
-	
 
 }

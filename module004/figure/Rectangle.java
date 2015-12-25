@@ -27,7 +27,5 @@ public class Rectangle extends Figure {
 	public void printInfo() {
 		System.out.println("The area of a rectangle : " + area());
 	}
-	
-	
 
 }
