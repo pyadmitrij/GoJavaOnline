@@ -8,6 +8,6 @@ public class Audio extends File {
 
 	@Override
 	public void printInfo() {
-		System.out.println(getName() + " file," + " size = " + getSize());		
+		System.out.println(getName() + " file," + " size = " + getSize());	
 	}
 }
