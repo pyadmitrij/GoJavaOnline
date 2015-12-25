@@ -4,7 +4,7 @@ public class MainArray {
 	
 	public static void main(String... args) {
 		
-		int[] array = new int[] {5, 20, 10, 15};
+		int[] array = new int[] {};
 		
 		MinMaxSotr.printArray(array);
 				
