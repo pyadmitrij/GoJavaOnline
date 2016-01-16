@@ -2,10 +2,10 @@ package figure;
 
 public class Rectangle extends Figure {
 	
-	// непонятно, что за переменная
+	// РЅРµ РїРѕРЅСЏС‚РЅРѕ, С‡С‚Рѕ Р·Р° РїРµСЂРµРјРµРЅРЅР°СЏ
 	private double a;
 	
-	// непонятно, что за переменная
+	// РЅРµ РїРѕРЅСЏС‚РЅРѕ, С‡С‚Рѕ Р·Р° РїРµСЂРµРјРµРЅРЅР°СЏ
 	private double b;
 	
 	public Rectangle(double a, double b) {

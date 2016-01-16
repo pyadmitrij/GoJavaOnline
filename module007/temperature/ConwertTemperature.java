@@ -2,14 +2,14 @@ package temperature;
 
 public class ConwertTemperature {
 	
-	// ft - температура по Фарингейту
-	// 32, 5/9 - это, наверное magic numbers
+	// ft - РўРµРјРїРµСЂР°С‚СѓСЂР° РїРѕ Р¤Р°СЂРёРЅРіРµР№С‚Сѓ
+	// 32, 5/9 - СЌС‚Рѕ, РЅР°РІРµСЂРѕРµ magic numbers
 	public double convertToCelsius(double ft) {
 		return (ft - 32) * 5/9;
 	}
 	
-	// cel - температура по Цельсию
-	// 9/5, 32 - это, наверное magic numbers
+	// cel - РўРµРјРїРµСЂР°С‚СѓСЂР° РїРѕ Р¦РµР»СЊСЃРёСЋ
+	// 9/5, 32 - СЌС‚Рѕ, РЅР°РІРµСЂРЅРѕРµ magic numbers
 	public double convertToFahrenheit(double cel) {
 		return (cel * 9/5) + 32;
 	}

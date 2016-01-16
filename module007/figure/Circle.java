@@ -4,7 +4,7 @@ public class Circle extends Figure {
 	
 	private final double PI = 3.14;
 	
-	// непонятно, что за переменная
+	// РЅРµ РїРѕРЅСЏС‚РЅРѕ, С‡С‚Рѕ Р·Р° РїРµСЂРµРјРµРЅРЅР°СЏ
 	private double r;
 	
 	public Circle (double r){
