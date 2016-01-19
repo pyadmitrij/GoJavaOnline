@@ -5,20 +5,21 @@ import java.util.List;
 
 public class MusicShop {
 	
-private List<MusicInstr> instr = new ArrayList<>();
+	private List<MusicInstr> instrument;
 
 	public MusicShop(MusicInstr... instr){
+		instrument = new ArrayList<>();
 		for(MusicInstr i : instr)
-			this.instr.add(i);
+			this.instrument.add(i);
 	}
 
-	public List<MusicInstr> getInstr() {
-		return instr;
+	public List<MusicInstr> getInstrument() {
+		return instrument;
 	}
 
-	public void setInstr(MusicInstr... instr) {
-		for(MusicInstr i : instr)
-			this.instr.add(i);
+	public void setInstrument(MusicInstr... instrument) {
+		for(MusicInstr i : instrument)
+			this.instrument.add(i);
 	}
 
 }

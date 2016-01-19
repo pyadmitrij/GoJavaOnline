@@ -1,30 +1,28 @@
 package module008.file;
 
-import module008.listutils.ListPrint;
-import module008.listutils.ListSort;
+import module008.utillist.ListPrintSort;
 import module008.myexception.NegativeSizeException;
 
 public class MainDirectory {
 
 	public static void main (String... args) {
 		try {
-			Directory directory = new Directory(new Audio("record001", 1000), new Text("doc001", 10), new Image("image001", 253));
+			ListPrintSort<File> list = new ListPrintSort<>();
+			Directory directory = new Directory(
+					new Audio("record001", "mp3", 1000),
+					new Text("doc001", "txt", 10),
+					new Image("image001", "gif", 253));
 
-			System.out.println("-----------Directory-----------");
+			System.out.println("---------------Directory---------------");
+			list.printList(directory.getFile());
 
-			ListPrint.printList(directory.getFile());
+			System.out.println("\n---------------Directory---------------");
+			directory.setFile(new Audio("zzzzz", "mp3", 1500), new Text("hello", "txt", 10));
+			list.printList(directory.getFile());
+			list.sortList(directory.getFile());
 
-			System.out.println("-----------Directory-----------");
-
-			directory.setFile(new Audio("zzzzz", 1500));
-
-			ListPrint.printList(directory.getFile());
-
-			ListSort.sortList(directory.getFile());
-
-			System.out.println("-----------Directory-----------");
-
-			ListPrint.printList(directory.getFile());
+			System.out.println("\n---------------Directory---------------");
+			list.printList(directory.getFile());
 
 		}
 		catch (NegativeSizeException e) {

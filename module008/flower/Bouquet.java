@@ -5,9 +5,10 @@ import java.util.List;
 
 public class Bouquet {
 	
-	private List<Flower> flower = new ArrayList<>();
+	private List<Flower> flower;
 	
-	public Bouquet(Flower... flowers){
+	public Bouquet(Flower... flowers) {
+		flower = new ArrayList<>();
 		for(Flower f : flowers)
 			this.flower.add(f);
 	}

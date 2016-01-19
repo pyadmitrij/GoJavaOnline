@@ -16,6 +16,13 @@ public abstract class Flower {
 	public Color getColor() {
 		return color;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Flower " +
+				"'" + name + '\'' +
+				", color " + color;
+	}
+
 	public abstract void printInfo();
 }

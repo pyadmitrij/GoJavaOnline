@@ -24,4 +24,11 @@ public abstract class MusicInstr {
 	}
 	
 	public abstract void printInfo();
+
+	@Override
+	public String toString() {
+		return "MusicInstr " +
+				"'" + name + '\'' +
+				", price=" + price;
+	}
 }
