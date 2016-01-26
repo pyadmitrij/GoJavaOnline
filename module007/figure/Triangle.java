@@ -1,11 +1,11 @@
-package figure;
+﻿package figure;
 
 public class Triangle extends Figure {
 	
-	// не понятно, что за переменная
+	// unknown variable
 	private double a;
 	
-	// не понятно, что за переменная
+	// unknown variable
 	private double b;
 	
 	public Triangle(double a, double b) {

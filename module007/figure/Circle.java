@@ -1,4 +1,4 @@
-package figure;
+﻿package figure;
 
 public class Circle extends Figure {
 	
