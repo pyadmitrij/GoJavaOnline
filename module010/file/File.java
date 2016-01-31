@@ -1,6 +1,6 @@
 package module010.file;
 
-import module008.myexception.NegativeSizeException;
+import module010.myexception.NegativeSizeException;
 
 public abstract class File {
 	

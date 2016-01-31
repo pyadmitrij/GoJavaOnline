@@ -10,7 +10,6 @@ public class AlgorithmCaesar {
     }
 
     public String decode(String text, int key) {
-        text = encode(text, key);
         char[] array = converToChar(text);
         for(int i=0; i<array.length; i++)
             array[i] = (char) (int) (array[i] - key);
