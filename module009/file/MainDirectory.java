@@ -1,15 +1,15 @@
 package module009.file;
 
-import module008.myexception.NegativeSizeException;
-import module008.utillist.ListPrintSort;
-import module009.utillist.AlhorithmCaeser;
+import module009.myexception.NegativeSizeException;
+import module009.utillist.ListPrintSort;
+import module009.utillist.AlgorithmCaeser;
 
 public class MainDirectory {
 
 	public static void main (String... args) {
 		try {
 			ListPrintSort<File> list = new ListPrintSort<File>();
-			AlhorithmCaeser alhorithm = new AlhorithmCaeser();
+			AlgorithmCaeser algorithm = new AlgorithmCaeser();
 			Directory directory = new Directory(
 					new Audio("record001", "mp3", 1000),
 					new Text("doc001", "txt", 10),
@@ -28,12 +28,13 @@ public class MainDirectory {
 
 			int key = 0;
 			String string = directory.getFile().toString();
-
 			System.out.println("\n" + string);
 
-			System.out.println("\n" + alhorithm.encode(string, key));
+			string = algorithm.encode(string, key);
+			System.out.println("\n" + string);
 
-			System.out.println("\n" + alhorithm.decode(string, key));
+			string = algorithm.decode(string, key);
+			System.out.println("\n" + string);
 
 
 		}

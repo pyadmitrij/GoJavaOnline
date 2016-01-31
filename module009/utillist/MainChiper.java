@@ -4,17 +4,17 @@ public class MainChiper {
 
     public static void main(String[] args) {
 
-        AlhorithmCaeser alhorithm = new AlhorithmCaeser();
-
-        int key = 1;
+        AlgorithmCaeser algorithm = new AlgorithmCaeser();
+        int key = 0;
 
         String string = "I love JAVA!!!";
-
         System.out.println(string);
 
-        System.out.println(alhorithm.encode(string, key));
+        string = algorithm.encode(string, key);
+        System.out.println(string);
 
-        System.out.println(alhorithm.decode(string, key));
+        string = algorithm.decode(string, key);
+        System.out.println(string);
     }
 }
 
