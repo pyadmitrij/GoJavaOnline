@@ -1,4 +1,4 @@
-package distance;
+package module004.distance;
 
 public class Point {
 	

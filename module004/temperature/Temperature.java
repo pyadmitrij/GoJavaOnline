@@ -1,23 +1,23 @@
-package temperature;
+package module004.temperature;
 
 public class Temperature {
 	
-	private double t;
+	private double temperature;
 	
-	public double getT() {
-		return t;
+	public double getTemperature() {
+		return temperature;
 	}
 	
-	public Temperature(double t) {
-		this.t = t;
+	public Temperature(double temperature) {
+		this.temperature = temperature;
 	}
 
-	public double covertToCelsius(Temperature far) {
-		return (far.t - 32) * 5/9;
+	public double covertToCelsius(Temperature fahrenheit) {
+		return (fahrenheit.temperature - 32) * 5/9;
 	}
 	
-	public double converToFahrenheit(Temperature cel) {
-		return cel.t * 9/5 + 32;
+	public double convertToFahrenheit(Temperature celsius) {
+		return celsius.temperature * 9/5 + 32;
 	}
 
 }

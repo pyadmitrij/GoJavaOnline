@@ -1,4 +1,4 @@
-package figure;
+package module004.figure;
 
 public class Rectangle extends Figure {
 	
