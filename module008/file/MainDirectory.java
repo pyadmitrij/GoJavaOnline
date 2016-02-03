@@ -14,15 +14,15 @@ public class MainDirectory {
 					new Image("image001", "gif", 253));
 
 			System.out.println("---------------Directory---------------");
-			list.printList(directory.getFile());
+			list.printList(directory.getFiles());
 
 			System.out.println("\n---------------Directory---------------");
-			directory.setFile(new Audio("zzzzz", "mp3", 1500), new Text("hello", "txt", 10));
-			list.printList(directory.getFile());
-			list.sortList(directory.getFile());
+			directory.addFile(new Audio("zzzzz", "mp3", 1500), new Text("hello", "txt", 10));
+			list.printList(directory.getFiles());
+			list.sortList(directory.getFiles());
 
 			System.out.println("\n---------------Directory---------------");
-			list.printList(directory.getFile());
+			list.printList(directory.getFiles());
 
 		}
 		catch (NegativeSizeException e) {

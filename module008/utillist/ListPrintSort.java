@@ -8,7 +8,7 @@ public class ListPrintSort<T> {
         int[] index = {0};
         list
                 .stream()
-                .forEach(element -> System.out.println(index[0]++ + " - " + element));
+                .forEach(element -> System.out.println(index[0]++ + " - " + String.valueOf(element)));
     }
 
     public List<T> sortList(List<T> list) {

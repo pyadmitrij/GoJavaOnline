@@ -5,21 +5,20 @@ import java.util.List;
 
 public class Directory {
 	
-	private List<File> file;
+	private List<File> files;
 
 	public Directory(File... files){
-		file = new ArrayList<>();
+		this.files = new ArrayList<>();
 		for(File f : files)
-			this.file.add(f);
+			this.files.add(f);
 	}
 
-	public List<File> getFile() {
-		return file;
+	public List<File> getFiles() {
+		return files;
 	}
 
-	public void setFile(File... files) {
+	public void addFile(File... files) {
 		for(File f : files)
-			this.file.add(f);
+			this.files.add(f);
 	}
-
 }
