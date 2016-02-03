@@ -1,4 +1,4 @@
-package finalproject;
+package finalproject.java;
 
 public class Node {
 

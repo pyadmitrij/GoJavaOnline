@@ -1,4 +1,6 @@
-package finalproject;
+package finalproject.java;
+
+import java.util.List;
 
 public class Tree {
     private Node root;
@@ -30,31 +32,31 @@ public class Tree {
         return current;
     }
 
-    public void inOrder(Node root) {
+    public void inOrder(Node root, List<Integer> data) {
         if(root != null) {
-            inOrder(root.getLeft());
-            System.out.print(root.getData() + ", ");
-            inOrder(root.getRight());
+            inOrder(root.getLeft(), data);
+            data.add(root.getData());
+            inOrder(root.getRight(), data);
         }
     }
 
-    public void preOrder(Node root) {
+    public void preOrder(Node root, List<Integer> data) {
         if(root != null) {
-            System.out.print(root.getData() + ", ");
-            preOrder(root.getLeft());
-            preOrder(root.getRight());
+            data.add(root.getData());
+            preOrder(root.getLeft(), data);
+            preOrder(root.getRight(), data);
         }
     }
 
-    public void postOrder(Node root) {
+    public void postOrder(Node root, List<Integer> data) {
         if (root == null)
             return;
         if (root.getLeft() == null && root.getRight() == null)
-            System.out.print(root.getData() + ", ");
+            data.add(root.getData());
         else {
-            postOrder(root.getLeft());
-            postOrder(root.getRight());
-            System.out.print(root.getData() + ", ");
+            postOrder(root.getLeft(), data);
+            postOrder(root.getRight(), data);
+            data.add(root.getData());
         }
     }
 }
