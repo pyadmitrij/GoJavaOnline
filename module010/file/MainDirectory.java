@@ -13,7 +13,7 @@ public class MainDirectory {
 		try {
 			ListPrintSort<File> list = new ListPrintSort<File>();
 			AlgorithmCaesar algorithm = new AlgorithmCaesar();
-			int key = 1;
+			char key = 1;
 			FileWorker worker = new FileWorker();
 			String fileName = "directory.txt";
 
@@ -23,17 +23,17 @@ public class MainDirectory {
 					new Image("image001", "gif", 253));
 
 			System.out.println("---------------Directory---------------");
-			list.printList(directory.getFile());
+			list.printList(directory.getFiles());
 
 			System.out.println("\n---------------Directory---------------");
-			directory.setFile(new Audio("zzzzz", "mp3", 1500), new Text("hello", "txt", 10));
-			list.printList(directory.getFile());
+			directory.addFile(new Audio("zzzzz", "mp3", 1500), new Text("hello", "txt", 10));
+			list.printList(directory.getFiles());
 
-			list.sortList(directory.getFile());
+			list.sortList(directory.getFiles());
 			System.out.println("\n---------------Directory---------------");
-			list.printList(directory.getFile());
+			list.printList(directory.getFiles());
 
-			String string = directory.getFile().toString();
+			String string = directory.getFiles().toString();
 			System.out.println("\n" + string);
 
 			string = algorithm.encode(string, key);
@@ -44,7 +44,7 @@ public class MainDirectory {
 			System.out.println("\n" + string);
 
 			string = algorithm.decode(string, key);
-			System.out.println(string);
+			System.out.println("\n" + string);
 
 		} catch (NegativeSizeException e) {
 			System.err.println("The size should not be less than zero, and has be: " + e.getSize());
