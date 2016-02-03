@@ -8,7 +8,7 @@ public abstract class File {
 	private String type;
 	private int size;
 	
-	public File(String name,String type, int size) throws NegativeSizeException{
+	public File(String name,String type, int size) throws NegativeSizeException {
 		if(size < 0)
 				throw new NegativeSizeException(size);
 			else
