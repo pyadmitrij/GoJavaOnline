@@ -1,0 +1,5 @@
+  Type of array             add             get          remove        contains        populate    iterator.add iterator.remove 
+      ArrayList             826               5         1250180         2616576              60               1               1 
+     LinkedList             828         2694649         3181493         7430819              70               0               0 
+        HashSet              29            null              23               0              65            null            null 
+        TreeSet             156            null             135               0             274            null            null 
