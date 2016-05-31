@@ -1,0 +1,168 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+-- -----------------------------------------------------
+-- Schema RESTAURANT
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema RESTAURANT
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `RESTAURANT` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `RESTAURANT` ;
+
+-- -----------------------------------------------------
+-- Table `RESTAURANT`.`POSITIONS`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `RESTAURANT`.`POSITIONS` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `NAME` VARCHAR(20) NOT NULL,
+  PRIMARY KEY (`ID`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `RESTAURANT`.`EMPLOYEE`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `RESTAURANT`.`EMPLOYEE` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `SURNAME` VARCHAR(20) NOT NULL,
+  `NAME` VARCHAR(20) NOT NULL,
+  `BIRTH_DATE` DATE NULL,
+  `PHONE` VARCHAR(10) NULL,
+  `SALARY` REAL NULL,
+  `POSITION_ID` INT NOT NULL,
+  PRIMARY KEY (`ID`),
+  INDEX `fk_EMPLOYEE_POSITION_idx` (`POSITION_ID` ASC),
+  CONSTRAINT `fk_EMPLOYEE_POSITION`
+    FOREIGN KEY (`POSITION_ID`)
+    REFERENCES `RESTAURANT`.`POSITIONS` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `RESTAURANT`.`INGREDIENTS`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `RESTAURANT`.`INGREDIENTS` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `NAME` VARCHAR(20) NULL,
+  PRIMARY KEY (`ID`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `RESTAURANT`.`STOCK`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `RESTAURANT`.`STOCK` (
+  `INGREDIENT_ID` INT NOT NULL,
+  `QUANTITY` INT NOT NULL,
+  INDEX `fk_STOCK_INGREDIENT1_idx` (`INGREDIENT_ID` ASC),
+  CONSTRAINT `fk_STOCK_INGREDIENT1`
+    FOREIGN KEY (`INGREDIENT_ID`)
+    REFERENCES `RESTAURANT`.`INGREDIENTS` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `RESTAURANT`.`DISHS`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `RESTAURANT`.`DISHS` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `NAME` VARCHAR(30) NOT NULL,
+  `CATEGORY` VARCHAR(30) NULL,
+  `COST` REAL NULL,
+  `WEIGHT` INT NOT NULL,
+  `INGREDIENT_ID` INT NOT NULL,
+  PRIMARY KEY (`ID`),
+  INDEX `fk_DISH_INGREDIENT1_idx` (`INGREDIENT_ID` ASC),
+  CONSTRAINT `fk_DISH_INGREDIENT1`
+    FOREIGN KEY (`INGREDIENT_ID`)
+    REFERENCES `RESTAURANT`.`INGREDIENTS` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `RESTAURANT`.`MENU`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `RESTAURANT`.`MENU` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `LIST_DISHES` TEXT(300) NOT NULL,
+  `DISH_ID` INT NOT NULL,
+  PRIMARY KEY (`ID`),
+  INDEX `fk_MENU_DISH1_idx` (`DISH_ID` ASC),
+  CONSTRAINT `fk_MENU_DISH1`
+    FOREIGN KEY (`DISH_ID`)
+    REFERENCES `RESTAURANT`.`DISHS` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `RESTAURANT`.`ORDERS`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `RESTAURANT`.`ORDERS` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `TABLE_NUMBER` INT NOT NULL,
+  `DATE` DATE NOT NULL,
+  `DISH_ID` INT NOT NULL,
+  `EMPLOYEE_ID` INT NOT NULL,
+  PRIMARY KEY (`ID`),
+  INDEX `fk_ORDER_DISH1_idx` (`DISH_ID` ASC),
+  INDEX `fk_ORDER_EMPLOYEE1_idx` (`EMPLOYEE_ID` ASC),
+  CONSTRAINT `fk_ORDER_DISH1`
+    FOREIGN KEY (`DISH_ID`)
+    REFERENCES `RESTAURANT`.`DISHS` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_ORDER_EMPLOYEE1`
+    FOREIGN KEY (`EMPLOYEE_ID`)
+    REFERENCES `RESTAURANT`.`EMPLOYEE` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `RESTAURANT`.`PREPARED_DISHS`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `RESTAURANT`.`PREPARED_DISHS` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `DATE` DATE NOT NULL,
+  `DISH_ID` INT NOT NULL,
+  `ORDER_ID` INT NOT NULL,
+  `EMPLOYEE_ID` INT NOT NULL,
+  PRIMARY KEY (`ID`),
+  INDEX `fk_PREPARED_DISH_DISH1_idx` (`DISH_ID` ASC),
+  INDEX `fk_PREPARED_DISH_ORDER1_idx` (`ORDER_ID` ASC),
+  INDEX `fk_PREPARED_DISH_EMPLOYEE1_idx` (`EMPLOYEE_ID` ASC),
+  CONSTRAINT `fk_PREPARED_DISH_DISH1`
+    FOREIGN KEY (`DISH_ID`)
+    REFERENCES `RESTAURANT`.`DISHS` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_PREPARED_DISH_ORDER1`
+    FOREIGN KEY (`ORDER_ID`)
+    REFERENCES `RESTAURANT`.`ORDERS` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_PREPARED_DISH_EMPLOYEE1`
+    FOREIGN KEY (`EMPLOYEE_ID`)
+    REFERENCES `RESTAURANT`.`EMPLOYEE` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
