@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <tx:annotation-driven transaction-manager="txManager" proxy-target-class="true"/>
+
+    <bean id="main" class="home.pdm.Main">
+        <property name="employeeController"  ref="employeeController"/>
+        <property name="dishController" ref="dishController"/>
+        <property name="menuController" ref="menuController"/>
+        <property name="orderController" ref="orderController"/>
+        <property name="preparedDishController" ref="preparedDishController"/>
+        <property name="stockController" ref="stockController"/>
+    </bean>
+
+    <bean id="employeeController" class="home.pdm.controllers.EmployeeController">
+        <property name="txManager" ref="txManager"/>
+        <property name="employeeDao" ref="employeeDao"/>
+    </bean>
+    <bean id="dishController" class="home.pdm.controllers.DishController">
+        <property name="txManager" ref="txManager"/>
+        <property name="dishDao" ref="dishDao"/>
+    </bean>
+    <bean id="menuController" class="home.pdm.controllers.MenuController">
+        <property name="txManager" ref="txManager"/>
+        <property name="menuDao" ref="menuDao"/>
+    </bean>
+    <bean id="orderController" class="home.pdm.controllers.OrderController">
+        <property name="txManager" ref="txManager"/>
+        <property name="orderDao" ref="orderDao"/>
+    </bean>
+    <bean id="preparedDishController" class="home.pdm.controllers.PreparedDishController">
+        <property name="txManager" ref="txManager"/>
+        <property name="preparedDishDao" ref="preparedDishDao"/>
+    </bean>
+    <bean id="stockController" class="home.pdm.controllers.StockController">
+        <property name="txManager" ref="txManager"/>
+        <property name="stockDao" ref="stockDao"/>
+    </bean>
+
+    <bean id="employeeDao" class="home.pdm.dao.JDBCEmployeeDAO">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <bean id="dishDao" class="home.pdm.dao.JDBCDishDAO">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <bean id="menuDao" class="home.pdm.dao.JDBCMenuDAO">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <bean id="stockDao" class="home.pdm.dao.JDBCStockDAO">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <bean id="orderDao" class="home.pdm.dao.JDBCOrderDAO">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <bean id="preparedDishDao" class="home.pdm.dao.JDBCPreparedDAO">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" >
+        <property name="driverClass" value="${jdbc.driver.class}"/>
+        <property name="jdbcUrl" value="${jdbc.url}"/>
+        <property name="user" value="${jdbc.user}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <property name="minPoolSize" value="${jdbc.min.connections}"/>
+        <property name="maxPoolSize" value="${jdbc.max.connections}"/>
+        <property name="acquireIncrement" value="${jdbc.acquire.increment}"/>
+    </bean>
+
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:jdbc.properties"/>
+    </bean>
+
+</beans>
