@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <bean id="main" class="home.pdm.Main">
+        <property name="sessionFactory" ref="sessionFactory" />
+        <property name="dishController" ref="dishController"/>
+        <property name="employeeController"  ref="employeeController"/>
+        <property name="menuController" ref="menuController"/>
+        <property name="orderController" ref="orderController"/>
+        <property name="stockController" ref="stockController"/>
+        <property name="preparedDishController" ref="preparedDishController"/>
+    </bean>
+
+    <bean id="dishController" class="home.pdm.controllers.DishController">
+        <property name="dishDao" ref="dishDao"/>
+    </bean>
+    <bean id="employeeController" class="home.pdm.controllers.EmployeeController">
+        <property name="employeeDao" ref="employeeDao"/>
+        <property name="txManager" ref="txManager"/>
+    </bean>
+    <bean id="menuController" class="home.pdm.controllers.MenuController">
+        <property name="menuDao" ref="menuDao"/>
+    </bean>
+    <bean id="orderController" class="home.pdm.controllers.OrderController">
+        <property name="orderDao" ref="orderDao"/>
+    </bean>
+    <bean id="stockController" class="home.pdm.controllers.StockController">
+        <property name="stockDao" ref="stockDao"/>
+    </bean>
+    <bean id="preparedDishController" class="home.pdm.controllers.PreparedDishController">
+        <property name="preparedDishDao" ref="preparedDishDao"/>
+        <property name="dishDao" ref="dishDao"/>
+        <property name="stockDao" ref="stockDao"/>
+    </bean>
+
+
+    <bean id="dishDao" class="home.pdm.hibernate.HDishDAO">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="employeeDao" class="home.pdm.hibernate.HEmployeeDAO">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="menuDao" class="home.pdm.hibernate.HMenuDAO">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="orderDao" class="home.pdm.hibernate.HOrderDAO">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="stockDao" class="home.pdm.hibernate.HStockDAO">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="preparedDishDao" class="home.pdm.hibernate.HPreparedDAO">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+</beans>
